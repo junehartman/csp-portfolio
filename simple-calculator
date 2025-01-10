@@ -1,0 +1,49 @@
+#June Hartman
+#Simple Calculator
+
+#Init
+#Functions
+def add(num1, num2): #This is the function for addition.
+    sum = num1 + num2
+    print("The sum is: " + str(sum))
+def subtract(num1, num2): #This is the function for subtraction.
+    difference = num1 - num2
+    print("The difference is: " + str(difference))
+def multiply(num1, num2): #This is the function for multiplication.
+    product = num1 * num2
+    print("The product is: " + str(product))
+def divide(num1, num2): #This is the function for division.
+    quotient = num1 / num2
+    print("The quotient is: " + str(quotient))
+#def quit():
+
+
+#Main
+print("Weclome to Simple Calculator!")
+while True:
+    print("Select an operation: ") #Collect user input
+    print ("""1) addition
+    2) subtraction
+    3) multiplication
+    4) division
+    5) quit program""")
+    option = int(input("(1-5) Select option: "))
+    if option == 1: #Display answer for addition
+        int1 = int(input("Enter first number: "))
+        int2 = int(input("Enter second number: "))
+        add (int1, int2)
+    if option == 2: #Display answer for subtraction
+        int1 = int(input("Enter first number: "))
+        int2 = int(input("Enter second number: "))
+        subtract(int1, int2)
+    if option == 3: #Display answer for multiplication
+        int1 = int(input("Enter first number: "))
+        int2 = int(input("Enter second number: "))
+        multiply(int1, int2)
+    if option == 4: #Display answer for division
+        int1 = int(input("Enter first number: "))
+        int2 = int(input("Enter second number: "))
+        divide(int1, int2)
+
+    if option == 5: #Loop breaks if user selects 'quit program'
+        break
