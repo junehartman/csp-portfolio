@@ -1,0 +1,36 @@
+#Number Guessing Game
+
+#Initialize
+import random
+
+#Functions
+def number_guess():
+    print("Welcome to the secret number guessing game!")
+    print("You will guess a number from 0-10 to find the secret number!")
+    print("You will have three chances to guess.")
+    y = random.randint(0,10) #This decides the secret number
+    for i in range(3): #This creates the 3 guesses
+        x = input("Enter a number from 0 to 10:")
+        if int(x) != y:
+            print("That is incorrect :(")
+            if int(x) > y: #This tells the user if the secret number is higher or lower than their guess
+                print("The real secret number is lower than that!")
+            else:
+                print("The real secret number is higher than that!")
+        if x == y: #This stops the guessing if the user guesses correctly
+            break
+    if int(x) == y: #This tells the user when they win the game
+        print("That is correct!")
+        print("Congratulations, you won!")
+    if int(x) != y: #This tells the user when they fail the game
+        print("Sadly, that was your last guess.")
+        print("The actual secret number was " + str(y) + "!")
+    x = input("Would you like to play again?") #This asks the user if they want to start again, and either takes them back to the start or ends the game.
+    if x == "yes":
+        number_guess()
+    else:
+        print("Okay, thank you for playing!")
+
+
+#Main
+number_guess()
