@@ -1,0 +1,35 @@
+#June Hartman
+#01/08/25
+#Multiplication Quiz
+
+#Initialize
+import random
+
+#Functions
+def multiplication_test():
+    print("Welcome to the Multiplication Quiz!") #introduction
+    print("You will be given random multiplication problems and asked to answer.")
+    print("Then, your score will be displayed on screen.")
+    question_num = 0
+    correct_ans = 0
+    while True: #loop that creates one question
+        x = random.randint(1, 12)
+        y = random.randint(1, 12)
+        question_num = question_num + 1
+        print("Question " + str(question_num) + ":")
+        print("What is " + str(x) + " x " + str(y) + "?") #random equation
+        answer = int(input("Your answer: "))
+        if answer == x * y:
+            print("Correct!")
+            correct_ans = correct_ans + 1
+        if answer != x * y:
+            print("Incorrect")
+            print("The correct answer is " + str(x*y))
+        print("You have gotten " + str(correct_ans) + " out of " + str(question_num) + " questions correct.") #record display
+        again = input("Would you like to do another question? ")
+        if again == "no": #if user quits, loop stops.
+            break
+    print("Thank you for playing!")
+
+#Main
+multiplication_test()
