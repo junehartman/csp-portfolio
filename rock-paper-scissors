@@ -1,0 +1,62 @@
+#June Hartman
+#01/06/25
+#Rock Paper Scissors
+
+#Initialize
+import random
+
+#Global Variables
+computer_score = 0
+user_score = 0
+ties = 0
+
+#Functions
+def play_game():
+    global computer_score
+    global user_score
+    global ties
+    while True: #loop that creates one game
+        print("Welcome to Rock Paper Scissors, get ready to play against the computer!") #introduction
+        computer_move = random.randint(1,3) #calculates computer move. 1=rock,2=paper,3=scissors
+        user_move = input("Rock, Paper, Scissors, Shoot! What is your move? ")
+        if user_move == "rock" and computer_move == 1: #give score results based on user/computer answers
+            print("The computer chose rock! TIE GAME")
+            ties = ties + 1
+        if user_move == "rock" and computer_move == 2:
+            print("The computer chose paper! COMPUTER WINS")
+            computer_score = computer_score + 1
+        if user_move == "rock" and computer_move == 3:
+            print("The computer chose scissors! YOU WIN")
+            user_score = user_score + 1
+        if user_move == "paper" and computer_move == 1:
+            print("The computer chose rock! YOU WIN")
+            user_score = user_score + 1
+        if user_move == "paper" and computer_move == 2:
+            print("The computer chose paper! TIE GAME")
+            ties = ties + 1
+        if user_move == "paper" and computer_move == 3:
+            print("The computer chose scissors! COMPUTER WINS")
+            computer_score = computer_score + 1
+        if user_move == "scissors" and computer_move == 1:
+            print("The computer chose rock! COMPUTER WINS")
+            computer_score = computer_score + 1
+        if user_move == "scissors" and computer_move == 2:
+            print("The computer chose paper! YOU WIN")
+            user_score = user_score + 1
+        if user_move == "scissors" and computer_move == 3:
+            print("The computer chose scissors! TIE GAME")
+            ties = ties + 1
+
+        print("Your wins: " + str(user_score)) #after game,display user stats
+        print("Your losses: " + str(computer_score))
+        print("Tie games: " + str(ties))
+
+        repeat = input("Would you like to play again? (yes/no): ") #gives option to play again, or to break the loop and quit
+        if repeat == "yes":
+            play_game()
+        if repeat == "no":
+            break
+    print("Thank you for playing!")
+
+#Main
+play_game()
